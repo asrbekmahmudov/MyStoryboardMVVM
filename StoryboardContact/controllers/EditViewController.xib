@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditViewController" customModule="StoryboardContact" customModuleProvider="target">
+            <connections>
+                <outlet property="editButton" destination="a0P-mo-OfL" id="Hm2-ar-e9v"/>
+                <outlet property="nameTextField" destination="zJt-Oh-1K0" id="chI-eJ-MWq"/>
+                <outlet property="phoneTextField" destination="nya-ih-hi7" id="E3n-fX-x5G"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="S0x-ng-ooh">
+                    <rect key="frame" x="20" y="372.5" width="374" height="161"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJt-Oh-1K0">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="QeJ-dj-Ygu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nya-ih-hi7">
+                            <rect key="frame" x="0.0" y="65" width="374" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="ysQ-Ub-g3R"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0P-mo-OfL">
+                            <rect key="frame" x="0.0" y="130" width="374" height="31"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                            <connections>
+                                <action selector="editContact:" destination="-1" eventType="touchUpInside" id="TxY-xu-Uer"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="zJt-Oh-1K0" firstAttribute="leading" secondItem="S0x-ng-ooh" secondAttribute="leading" id="1Bm-Oj-OSq"/>
+                        <constraint firstAttribute="trailing" secondItem="nya-ih-hi7" secondAttribute="trailing" id="9C5-4T-vPw"/>
+                        <constraint firstItem="nya-ih-hi7" firstAttribute="leading" secondItem="S0x-ng-ooh" secondAttribute="leading" id="9Iy-hy-e80"/>
+                        <constraint firstAttribute="trailing" secondItem="zJt-Oh-1K0" secondAttribute="trailing" id="BI2-9q-V7d"/>
+                        <constraint firstAttribute="trailing" secondItem="a0P-mo-OfL" secondAttribute="trailing" id="niM-cK-iic"/>
+                        <constraint firstItem="a0P-mo-OfL" firstAttribute="leading" secondItem="S0x-ng-ooh" secondAttribute="leading" id="whL-OX-Cly"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="S0x-ng-ooh" secondAttribute="trailing" constant="20" id="NpF-sc-7bb"/>
+                <constraint firstItem="S0x-ng-ooh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="icj-B3-R34"/>
+                <constraint firstItem="S0x-ng-ooh" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="wqz-8Q-jCZ"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="64"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
