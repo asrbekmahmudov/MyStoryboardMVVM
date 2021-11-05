@@ -14,20 +14,7 @@ class EditViewController: BaseViewController {
     @IBOutlet weak var editButton: UIButton!
     
     var contact = Contact()
-    
-    func apiContactEdit(contact: Contact) {
-        showProgress()
-        
-        AFHttp.put(url: AFHttp.API_CONTACT_UPDATE + contact.id!, params: AFHttp.paramsContactUpdate(contact: contact), handler: { response in
-            self.hideProgress()
-            switch response.result {
-            case .success:
-                print(response.result)
-            case let .failure(error):
-                print(error)
-            }
-        })
-    }
+    var viewmodel = EditViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +29,11 @@ class EditViewController: BaseViewController {
         phoneTextField.text = contact.phone
         editButton.layer.cornerRadius = 5
         editButton.layer.borderWidth = 0.5
+        bindViewModel()
+    }
+    
+    func bindViewModel() {
+        viewmodel.controller = self
     }
     
     func initNavigation() {
@@ -52,8 +44,11 @@ class EditViewController: BaseViewController {
     @IBAction func editContact(_ sender: Any) {
         contact.name = nameTextField.text
         contact.phone = phoneTextField.text
-        apiContactEdit(contact: contact)
-        self.dismiss(animated: true, completion: nil)
+        viewmodel.apiContactEdit(contact: contact, handler: { isEdited in
+            if isEdited {
+                self.dismiss(animated: true, completion: nil)
+            }
+        })
     }
     
 }
